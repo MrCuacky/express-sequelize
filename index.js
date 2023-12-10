@@ -4,6 +4,7 @@ const Hero = require('./Hero')
 const Start = require('./Start')
 const Aboutus = require('./Aboutus')
 const Product = require('./Product')
+const Contact = require('./Contact')
 const cors = require('cors')
 
 
@@ -71,7 +72,7 @@ app.get('/aboutus', async(req,res) =>{
 app.post('/product', async(req,res) =>{
   try {
     await Product.create(req.body)
-    res.send("About us created")
+    res.send("Product us created")
   } catch (error) {
     res.send(error)
   }
@@ -80,6 +81,24 @@ app.get('/product', async(req,res) =>{
   try {
     const product = await Product.findAll()
     res.send(product)
+  } catch (error) {
+    res.send("There was an error")
+  }
+})
+
+
+app.post('/contact', async(req,res) =>{
+  try {
+    await Contact.create(req.body)
+    res.send("Contact created")
+  } catch (error) {
+    res.send(error)
+  }
+})
+app.get('/contact', async(req,res) =>{
+  try {
+    const contact = await Contact.findAll()
+    res.send(contact)
   } catch (error) {
     res.send("There was an error")
   }
