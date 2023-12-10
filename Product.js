@@ -1,18 +1,18 @@
 const {Model, DataTypes} = require('sequelize')
 const sequelize = require('./database')
 
-class User extends Model {}
+class Product extends Model {}
 
-User.init({
-    userName: {
+Product.init({
+    titulo: {
         type: DataTypes.STRING
     },
-    email: {
+    contenido: {
         type: DataTypes.STRING
-    }
+    },
 }, {
     sequelize,
-    modelName: 'user'
+    modelName: 'product'
 })
 
-module.exports = User
+module.exports = Product
