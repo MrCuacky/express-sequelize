@@ -1,24 +1,21 @@
 const {Model, DataTypes} = require('sequelize')
 const sequelize = require('./database')
 
-class Hero extends Model {}
+class User extends Model {}
 
-Hero.init({
-    titulo: {
+User.init({
+    nombre: {
         type: DataTypes.STRING
     },
-    contenido: {
+    puesto: {
         type: DataTypes.STRING
     },
-    boton1: {
+    testimonio: {
         type: DataTypes.STRING
     },
-    boton2: {
-        type: DataTypes.STRING
-    }
 }, {
     sequelize,
-    modelName: 'hero'
+    modelName: 'user'
 })
 
-module.exports = Hero
+module.exports = User
